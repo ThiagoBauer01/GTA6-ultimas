@@ -140,10 +140,33 @@
       border-radius: 5px;
       cursor: pointer;
       transition: background 0.3s ease;
+      font-size: 1.1rem;
     }
 
     .option:hover {
       background-color: #444;
+    }
+
+    .option.selected {
+      background-color: #ff00cc;
+      color: #000;
+    }
+
+    /* Button for submitting */
+    .submit-button {
+      padding: 1rem 2rem;
+      background-color: #ff00cc;
+      border: none;
+      border-radius: 5px;
+      color: #000;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 2rem;
+    }
+
+    .submit-button:hover {
+      background-color: #cc00b3;
     }
 
     /* For smaller screens */
@@ -157,6 +180,27 @@
       .quiz-container {
         width: 100%;
       }
+    }
+
+    /* Ranking Styles */
+    .ranking {
+      display: none;
+      width: 90%;
+      max-width: 800px;
+      margin: 2rem auto;
+      background-color: #222;
+      padding: 2rem;
+      border-radius: 1rem;
+      color: #fff;
+    }
+
+    .ranking.active {
+      display: block;
+    }
+
+    .ranking h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
     }
   </style>
 </head>
@@ -195,88 +239,4 @@
       <h3>1. Qual o nome do protagonista principal de GTA 5?</h3>
       <div class="options">
         <div class="option">Michael De Santa</div>
-        <div class="option">Franklin Clinton</div>
-        <div class="option">Trevor Philips</div>
-        <div class="option">Niko Bellic</div>
-      </div>
-    </div>
-
-    <div class="question">
-      <h3>2. Em qual cidade GTA 5 é ambientado?</h3>
-      <div class="options">
-        <div class="option">Liberty City</div>
-        <div class="option">Los Santos</div>
-        <div class="option">Vice City</div>
-        <div class="option">San Fierro</div>
-      </div>
-    </div>
-
-    <div class="question">
-      <h3>3. Qual é o nome da empresa responsável pela franquia GTA?</h3>
-      <div class="options">
-        <div class="option">Ubisoft</div>
-        <div class="option">EA Games</div>
-        <div class="option">Rockstar Games</div>
-        <div class="option">Naughty Dog</div>
-      </div>
-    </div>
-
-    <div class="question">
-      <h3>4. Qual era o nome do personagem principal de GTA: San Andreas?</h3>
-      <div class="options">
-        <div class="option">Carl "CJ" Johnson</div>
-        <div class="option">Tommy Vercetti</div>
-        <div class="option">Claude</div>
-        <div class="option">Johnny Klebitz</div>
-      </div>
-    </div>
-
-    <div class="question">
-      <h3>5. Em qual ano foi lançado GTA V?</h3>
-      <div class="options">
-        <div class="option">2013</div>
-        <div class="option">2010</div>
-        <div class="option">2015</div>
-        <div class="option">2012</div>
-      </div>
-    </div>
-    
-    <div class="question">
-      <h3>Nome</h3>
-      <input type="text" id="name" placeholder="Digite seu nome">
-      <h3>Email</h3>
-      <input type="email" id="email" placeholder="Digite seu e-mail">
-      <button onclick="submitQuiz()">Enviar</button>
-    </div>
-  </section>
-
-  <footer>
-    Página criada por Bauer - GTA 6 Fan Page
-  </footer>
-
-  <script>
-    const questions = document.querySelectorAll('.question');
-    let currentQuestion = 0;
-
-    function changeQuestion() {
-      questions[currentQuestion].classList.remove('active');
-      currentQuestion = (currentQuestion + 1) % questions.length;
-      questions[currentQuestion].classList.add('active');
-    }
-
-    document.querySelectorAll('.option').forEach(option => {
-      option.addEventListener('click', () => {
-        changeQuestion();
-      });
-    });
-
-    function submitQuiz() {
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-
-      // Aqui você pode enviar os dados para o banco de dados via API ou outro método
-      alert('Dados enviados para o ranking');
-    }
-  </script>
-</body>
-</html>
+        <div class="option">Frank
