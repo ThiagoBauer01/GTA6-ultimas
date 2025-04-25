@@ -102,6 +102,72 @@
       color: #ffccff;
     }
 
+    .quiz {
+      margin-top: 3rem;
+      width: 90%;
+      max-width: 800px;
+      background: rgba(0,0,0,0.8);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 20px rgba(255,0,204,0.3);
+    }
+
+    .quiz h2 {
+      text-align: center;
+      color: #00ffff;
+      margin-bottom: 1rem;
+    }
+
+    .question {
+      display: none;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .question.active {
+      display: flex;
+    }
+
+    .question p {
+      font-weight: 600;
+    }
+
+    .question button {
+      padding: 0.6rem 1rem;
+      background: #ff00cc;
+      border: none;
+      border-radius: 0.5rem;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .question button:hover {
+      background: #cc00aa;
+    }
+
+    .cadastro {
+      display: none;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .cadastro input {
+      padding: 0.6rem;
+      border-radius: 0.5rem;
+      border: none;
+    }
+
+    .cadastro button {
+      background: #00ffff;
+      border: none;
+      padding: 0.8rem;
+      border-radius: 0.5rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
     footer {
       margin: 3rem 1rem 1rem;
       font-size: 0.8rem;
@@ -132,45 +198,54 @@
   </div>
 
   <section class="noticias">
-    <div class="noticia">
-      <h2>Lançamento em 2025</h2>
-      <p>A Rockstar Games finalmente confirmou: Grand Theft Auto VI será lançado no final de 2025, com previsão entre setembro e novembro. Após anos de rumores e especulações, a comunidade gamer pode contar com uma data concreta para o título mais aguardado da década. Segundo o estúdio, o desenvolvimento está em ritmo acelerado e o foco está em garantir uma experiência de mundo aberto ainda mais imersiva e fluida, aproveitando o máximo do poder dos consoles de nova geração. Esse lançamento promete redefinir o gênero sandbox com uma narrativa densa, ambientes realistas e mecânicas avançadas.</p>
-      <div class="fonte">
-        Fonte: <a href="https://www.rockstargames.com/newswire/article/6ko44760" target="_blank">rockstargames.com</a><br>
-        Publicado em 04/12/2023 às 11:00
-      </div>
-    </div>
-
-    <div class="publicidade">
-      Banner publicitário – Anuncie sua marca aqui!
-    </div>
-
-    <div class="noticia">
-      <h2>Vice City está de volta</h2>
-      <p>Prepare-se para revisitar Vice City como você nunca viu antes. A lendária cidade fictícia inspirada em Miami foi completamente reconstruída para GTA 6, agora com riqueza de detalhes, atmosfera vibrante e dinâmica urbana realista. Com clima tropical, litoral animado e bairros com identidades próprias, Vice City será o palco de uma nova história repleta de ação, drama e decisões impactantes. A Rockstar afirmou que o mapa será expansivo e interativo, com ciclos climáticos, NPCs com rotinas únicas e eventos aleatórios que darão vida à cidade.</p>
-      <div class="fonte">
-        Fonte: <a href="https://www.ign.com/articles/gta-6-trailer-vice-city" target="_blank">ign.com</a><br>
-        Publicado em 05/12/2023 às 09:45
-      </div>
-    </div>
-
-    <div class="publicidade">
-      Anuncie aqui – visibilidade para seu negócio com público gamer!
-    </div>
-
-    <div class="noticia">
-      <h2>Lucia e Jason: protagonistas</h2>
-      <p>O primeiro trailer de GTA 6 revelou os protagonistas que conduzirão a trama: Lucia e Jason. Em uma dinâmica que remete ao clássico casal fora da lei Bonnie e Clyde, a dupla promete protagonizar uma narrativa envolvente, com foco em crimes, relacionamentos e fuga da lei. Lucia, a primeira protagonista feminina jogável da franquia, surge como uma personagem forte, estratégica e determinada. Jason, por outro lado, traz uma abordagem mais impulsiva e explosiva. Juntos, eles prometem levar os jogadores por uma jornada intensa de assaltos, perseguições e decisões morais complexas.</p>
-      <div class="fonte">
-        Fonte: <a href="https://www.gameinformer.com/news/2023/12/05/gta-6s-main-characters-are-lucia-and-her-partner" target="_blank">gameinformer.com</a><br>
-        Publicado em 05/12/2023 às 10:20
-      </div>
-    </div>
-
-    <div class="publicidade">
-      Espaço reservado para nova campanha – entre em contato!
-    </div>
+    <!-- Notícias atualizadas aqui futuramente -->
   </section>
+
+  <div class="quiz">
+    <h2>Quiz: Você conhece o universo GTA?</h2>
+    <div class="question active">
+      <p>1. Qual o nome do protagonista de GTA: San Andreas?</p>
+      <button>Tommy Vercetti</button>
+      <button>CJ</button>
+      <button>Michael De Santa</button>
+      <button>Niko Bellic</button>
+    </div>
+    <div class="question">
+      <p>2. Em que cidade é ambientado o GTA Vice City?</p>
+      <button>Los Santos</button>
+      <button>Las Venturas</button>
+      <button>Vice City</button>
+      <button>San Fierro</button>
+    </div>
+    <div class="question">
+      <p>3. Qual é o nome da empresa por trás de GTA?</p>
+      <button>Ubisoft</button>
+      <button>Electronic Arts</button>
+      <button>Rockstar Games</button>
+      <button>Activision</button>
+    </div>
+    <div class="question">
+      <p>4. Em qual GTA apareceu pela primeira vez um protagonista mulher jogável?</p>
+      <button>GTA 5</button>
+      <button>GTA San Andreas</button>
+      <button>GTA 6</button>
+      <button>GTA 3</button>
+    </div>
+    <div class="question">
+      <p>5. Qual cidade fictícia é inspirada em Los Angeles?</p>
+      <button>Vice City</button>
+      <button>Liberty City</button>
+      <button>Los Santos</button>
+      <button>San Fierro</button>
+    </div>
+    <div class="cadastro">
+      <p>Parabéns por completar o quiz! Cadastre-se para entrar no ranking:</p>
+      <input type="text" placeholder="Nome" />
+      <input type="email" placeholder="E-mail" />
+      <input type="tel" placeholder="Telefone" />
+      <button>Enviar</button>
+    </div>
+  </div>
 
   <audio autoplay loop>
     <source src="https://www.bensound.com/bensound-music/bensound-retrosoul.mp3" type="audio/mp3">
@@ -180,5 +255,22 @@
   <footer>
     Página criada por Bauer - GTA 6 Fan Page
   </footer>
+
+  <script>
+    const questions = document.querySelectorAll('.question');
+    let current = 0;
+    questions.forEach((q, i) => {
+      const buttons = q.querySelectorAll('button');
+      buttons.forEach(btn => btn.addEventListener('click', () => {
+        questions[current].classList.remove('active');
+        current++;
+        if (questions[current]) {
+          questions[current].classList.add('active');
+        } else {
+          document.querySelector('.cadastro').style.display = 'flex';
+        }
+      }));
+    });
+  </script>
 </body>
 </html>
