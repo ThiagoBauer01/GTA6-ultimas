@@ -8,14 +8,13 @@
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
       background-color: #1b1b1b;
       color: #fff;
       text-align: center;
+      margin: 0;
+      padding: 0;
     }
     .quiz-container {
-      display: none;
       max-width: 600px;
       margin: auto;
       padding: 2rem;
@@ -25,7 +24,6 @@
     }
     .question {
       display: none;
-      margin-bottom: 1rem;
     }
     .question.active {
       display: block;
@@ -40,9 +38,6 @@
     }
     .options div:hover {
       background-color: #444;
-    }
-    .question h3 {
-      margin: 0.5rem 0;
     }
     .submit-button {
       padding: 10px 20px;
@@ -231,7 +226,13 @@
       ];
 
       const rankingList = document.getElementById('ranking-list');
-      rankingList.innerHTML = ranking.map(player => `<li>${player.name} - ${player.score} pontos</li>`).join('');
+      rankingList.innerHTML = ''; // Limpar lista existente
+
+      ranking.forEach(player => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${player.name} - Pontuação: ${player.score}`;
+        rankingList.appendChild(listItem);
+      });
     }
   </script>
 </body>
