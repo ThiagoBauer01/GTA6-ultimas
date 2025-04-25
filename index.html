@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -16,139 +15,179 @@
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
-    }
+      background-attachment: fixed;
+      overflow-x: hidden;
+    }header {
+  padding: 3rem 1rem 1rem;
+  text-align: center;
+}
 
-    header {
-      padding: 3rem 1rem 1rem;
-      text-align: center;
-    }
+header h1 {
+  font-size: 3rem;
+  color: #00ffc3;
+  text-shadow: 0 0 15px #00ffc3;
+  margin: 0;
+}
 
-    header h1 {
-      font-size: 2.5rem;
-      color: #ff00cc;
-      text-shadow: 0 0 10px #ff00cc;
-      margin: 0;
-    }
+.video-container {
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 800px;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(0, 255, 195, 0.3);
+}
 
-    .video-container {
-      margin: 2rem auto;
-      width: 90%;
-      max-width: 800px;
-      border-radius: 1rem;
-      overflow: hidden;
-      box-shadow: 0 0 25px rgba(255, 0, 204, 0.3);
-    }
+iframe {
+  width: 100%;
+  height: 450px;
+  border: none;
+}
 
-    iframe {
-      width: 100%;
-      height: 450px;
-      border: none;
-    }
+.contador {
+  margin: 2rem 0;
+  font-size: 1.5rem;
+  color: #00ffe1;
+  background: rgba(255,255,255,0.07);
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(0, 255, 195, 0.2);
+}
 
-    section.noticias {
-      max-width: 800px;
-      width: 90%;
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
+.notify-btn {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: #00ffc3;
+  color: #000;
+  border: none;
+  border-radius: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
 
-    .noticia {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 1.5rem;
-      border-radius: 1rem;
-      box-shadow: 0 0 15px rgba(255, 0, 204, 0.2);
-    }
+.notify-btn:hover {
+  background: #00bfa5;
+}
 
-    .noticia h2 {
-      color: #00ffff;
-      font-size: 1.4rem;
-      margin-bottom: 0.5rem;
-    }
+section.noticias {
+  max-width: 800px;
+  width: 90%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
 
-    .noticia p {
-      color: #ddd;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
+.noticia {
+  background: rgba(255, 255, 255, 0.07);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 255, 195, 0.2);
+  backdrop-filter: blur(10px);
+}
 
-    .fonte {
-      margin-top: 0.8rem;
-      font-size: 0.9rem;
-      color: #aaa;
-    }
+.noticia h2 {
+  color: #00ffe1;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
 
-    .fonte a {
-      color: #aaa;
-      text-decoration: underline;
-    }
+.noticia p {
+  color: #e0f7fa;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
 
-    footer {
-      margin: 3rem 1rem 1rem;
-      font-size: 0.8rem;
-      color: #888;
-    }
+.fonte {
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
+  color: #aaa;
+}
 
-    audio {
-      display: none;
-    }
+.fonte a {
+  color: #80deea;
+  text-decoration: underline;
+}
 
-    @media (max-width: 600px) {
-      iframe {
-        height: 250px;
-      }
-      header h1 {
-        font-size: 2rem;
-      }
-    }
+footer {
+  margin: 3rem 1rem 1rem;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+audio {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  iframe {
+    height: 250px;
+  }
+  header h1 {
+    font-size: 2.2rem;
+  }
+}
+
   </style>
 </head>
 <body>
   <header>
     <h1>GTA 6 - Últimas Notícias</h1>
-  </header>
-
-  <div class="video-container">
+  </header>  <div class="video-container">
     <iframe src="https://www.youtube.com/embed/QdBZY2fkU-0?rel=0" allowfullscreen></iframe>
+  </div>  <div class="contador" id="contador">Contagem regressiva para o lançamento...</div>
+  <button class="notify-btn" onclick="alert('Notificações ativadas! Você será avisado das próximas novidades.')">Ativar Notificações</button>  <section class="noticias">
+    <div class="noticia">
+      <h2>Rockstar quebra recorde de silêncio</h2>
+      <p>Já são mais de 500 dias sem novas informações oficiais desde o trailer de estreia de GTA 6. Ainda assim, a previsão de lançamento continua marcada para 2025.</p>
+      <div class="fonte">
+        Fonte: <a href="https://as.com/meristation/noticias/el-desafortunado-record-de-gta-6-del-que-ningun-fan-de-la-saga-se-alegra-n/" target="_blank">as.com</a><br>
+        Publicado em abril de 2025
+      </div>
+    </div><div class="noticia">
+  <h2>Segundo trailer pode demorar</h2>
+  <p>Executivos da Take-Two sugerem que o próximo trailer só será divulgado mais próximo da data de lançamento, como estratégia para manter o hype controlado.</p>
+  <div class="fonte">
+    Fonte: <a href="https://www.polygon.com/gta-grand-theft-auto/549529/grand-theft-auto-6-gta-second-trailer-rockstar-take-two-strauss-zelnick" target="_blank">polygon.com</a><br>
+    Publicado em abril de 2025
   </div>
+</div>
 
-  <section class="noticias">
-    <div class="noticia">
-      <h2>Lançamento em 2025</h2>
-      <p>A Rockstar confirmou oficialmente que GTA 6 será lançado no final de 2025, com previsão entre setembro e novembro.</p>
-      <div class="fonte">
-        Fonte: <a href="https://www.rockstargames.com/newswire/article/6ko44760" target="_blank">rockstargames.com</a><br>
-        Publicado em 04/12/2023 às 11:00
-      </div>
-    </div>
+<div class="noticia">
+  <h2>Risco de adiamento para 2026</h2>
+  <p>Segundo o jornalista Jason Schreier, há chances de GTA 6 ser adiado para 2026, embora oficialmente a Rockstar ainda mantenha 2025 como o ano de lançamento.</p>
+  <div class="fonte">
+    Fonte: <a href="https://as.com/meristation/noticias/jason-schreirer-da-una-pista-sobre-la-fecha-final-de-gta-6-y-su-posible-retraso-n/" target="_blank">as.com</a><br>
+    Publicado em abril de 2025
+  </div>
+</div>
 
-    <div class="noticia">
-      <h2>Vice City está de volta</h2>
-      <p>A cidade clássica retorna com um visual moderno e realista, inspirada no sul da Flórida, trazendo vida à nova geração de consoles.</p>
-      <div class="fonte">
-        Fonte: <a href="https://www.ign.com/articles/gta-6-trailer-vice-city" target="_blank">ign.com</a><br>
-        Publicado em 05/12/2023 às 09:45
-      </div>
-    </div>
-
-    <div class="noticia">
-      <h2>Lucia e Jason: protagonistas</h2>
-      <p>O trailer confirmou que Lucia será uma das protagonistas, em uma história de parceria e crimes ao estilo Bonnie e Clyde.</p>
-      <div class="fonte">
-        Fonte: <a href="https://www.gameinformer.com/news/2023/12/05/gta-6s-main-characters-are-lucia-and-her-partner" target="_blank">gameinformer.com</a><br>
-        Publicado em 05/12/2023 às 10:20
-      </div>
-    </div>
-  </section>
-
-  <audio autoplay loop>
+  </section>  <audio autoplay loop>
     <source src="https://www.bensound.com/bensound-music/bensound-retrosoul.mp3" type="audio/mp3">
     Seu navegador não suporta áudio embutido.
-  </audio>
+  </audio>  <footer>
+    Página atualizada por Bauer - GTA 6 Fan Page
+  </footer>  <script>
+    // Definindo a data estimada de lançamento: 15 de outubro de 2025 às 12h
+    const dataLancamento = new Date("2025-10-15T12:00:00").getTime();
 
-  <footer>
-    Página criada por Bauer - GTA 6 Fan Page
-  </footer>
-</body>
+    const contador = document.getElementById("contador");
+    setInterval(() => {
+      const agora = new Date().getTime();
+      const distancia = dataLancamento - agora;
+
+      if (distancia <= 0) {
+        contador.innerHTML = "GTA 6 já está entre nós!";
+        return;
+      }
+
+      const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+      contador.innerHTML = `Faltam ${dias}d ${horas}h ${minutos}m ${segundos}s para o lançamento!`;
+    }, 1000);
+  </script></body>
 </html>
