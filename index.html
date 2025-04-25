@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GTA 6 - Últimas Notícias</title>
+  <title>GTA 6 - Últimas Atualizações</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -108,13 +108,25 @@
       color: #888;
     }
 
-    .formulario {
+    .quiz-container {
       margin: 3rem 0;
-      padding: 2rem;
+      width: 90%;
+      max-width: 800px;
       background: rgba(0, 0, 0, 0.7);
+      padding: 2rem;
       border-radius: 1rem;
       box-shadow: 0 0 25px rgba(255, 0, 204, 0.3);
+      color: #fff;
       text-align: center;
+    }
+
+    .quiz-container h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .quiz-container .questao {
+      margin-bottom: 1rem;
     }
 
     .formulario input {
@@ -132,7 +144,7 @@
 </head>
 <body>
   <header>
-    <h1>GTA6<br>Últimas notícias</h1>
+    <h1>GTA 6<br>Últimas Atualizações</h1>
   </header>
 
   <div class="video-container">
@@ -162,20 +174,54 @@
   <div class="publicidade">[ Espaço para publicidade - Banner 1 ]</div>
   <div class="publicidade">[ Espaço para publicidade - Banner 2 ]</div>
 
-  <!-- Formulário de cadastro do quiz -->
-  <div class="formulario">
-    <h2>Cadastro para Ranking</h2>
-    <form id="quizForm">
-      <input type="text" id="nome" name="nome" placeholder="Nome" required><br><br>
-      <input type="email" id="email" name="email" placeholder="E-mail" required><br><br>
-      <input type="text" id="telefone" name="telefone" placeholder="Telefone" required><br><br>
-      <input type="submit" value="Enviar para Ranking">
-    </form>
-  </div>
+  <!-- Quiz Section -->
+  <div class="quiz-container">
+    <h2>Teste seus conhecimentos sobre GTA 5</h2>
+    <div class="questao">
+      <p><strong>1. Quem é o protagonista principal de GTA 5?</strong></p>
+      <input type="radio" name="q1" value="Michael"> Michael De Santa<br>
+      <input type="radio" name="q1" value="Trevor"> Trevor Philips<br>
+      <input type="radio" name="q1" value="Franklin"> Franklin Clinton<br>
+      <input type="radio" name="q1" value="Lester"> Lester Crest<br>
+    </div>
+    <div class="questao">
+      <p><strong>2. Qual é o nome da cidade onde se passa GTA 5?</strong></p>
+      <input type="radio" name="q2" value="Los Angeles"> Los Angeles<br>
+      <input type="radio" name="q2" value="Los Santos"> Los Santos<br>
+      <input type="radio" name="q2" value="San Fierro"> San Fierro<br>
+      <input type="radio" name="q2" value="Liberty City"> Liberty City<br>
+    </div>
+    <div class="questao">
+      <p><strong>3. Qual é a principal missão de Michael De Santa no jogo?</strong></p>
+      <input type="radio" name="q3" value="Fugir da polícia"> Fugir da polícia<br>
+      <input type="radio" name="q3" value="Realizar um assalto"> Realizar um assalto<br>
+      <input type="radio" name="q3" value="Evitar a vingança de Trevor"> Evitar a vingança de Trevor<br>
+      <input type="radio" name="q3" value="Escapar do FBI"> Escapar do FBI<br>
+    </div>
+    <div class="questao">
+      <p><strong>4. Qual é o nome do clube de motociclistas associado a Trevor Philips?</strong></p>
+      <input type="radio" name="q4" value="The Lost MC"> The Lost MC<br>
+      <input type="radio" name="q4" value="The Rednecks"> The Rednecks<br>
+      <input type="radio" name="q4" value="The Vagos"> The Vagos<br>
+      <input type="radio" name="q4" value="The Angels of Death"> The Angels of Death<br>
+    </div>
+    <div class="questao">
+      <p><strong>5. Onde Trevor Philips vive durante GTA 5?</strong></p>
+      <input type="radio" name="q5" value="Vinewood Hills"> Vinewood Hills<br>
+      <input type="radio" name="q5" value="Paleto Bay"> Paleto Bay<br>
+      <input type="radio" name="q5" value="Sandy Shores"> Sandy Shores<br>
+      <input type="radio" name="q5" value="Los Santos"> Los Santos<br>
+    </div>
 
-  <!-- Quiz Section (mantido como exemplo) -->
-  <div class="quiz">
-    <!-- Suas questões e opções de resposta aqui -->
+    <!-- Formulário de cadastro para ranking -->
+    <div class="formulario">
+      <h3>Cadastro para Ranking</h3>
+      <form id="quizForm">
+        <input type="text" id="nome" name="nome" placeholder="Nome" required><br><br>
+        <input type="email" id="email" name="email" placeholder="E-mail" required><br><br>
+        <input type="submit" value="Enviar para Ranking">
+      </form>
+    </div>
   </div>
 
   <footer>
@@ -188,16 +234,20 @@
 
       const nome = document.getElementById("nome").value;
       const email = document.getElementById("email").value;
-      const telefone = document.getElementById("telefone").value;
-      const respostas = "Aqui as respostas do quiz"; // Suas respostas do quiz
+      const respostas = {
+        "q1": document.querySelector('input[name="q1"]:checked')?.value,
+        "q2": document.querySelector('input[name="q2"]:checked')?.value,
+        "q3": document.querySelector('input[name="q3"]:checked')?.value,
+        "q4": document.querySelector('input[name="q4"]:checked')?.value,
+        "q5": document.querySelector('input[name="q5"]:checked')?.value
+      };
 
       const data = {
         "data": [
           {
             "Nome": nome,
             "E-mail": email,
-            "Telefone": telefone,
-            "Respostas do Quiz": respostas
+            "Respostas": respostas
           }
         ]
       };
