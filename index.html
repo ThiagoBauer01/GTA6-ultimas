@@ -93,39 +93,22 @@
       text-decoration: underline;
     }
 
-    footer {
-      margin: 3rem 1rem 1rem;
-      font-size: 0.8rem;
-      color: #888;
-    }
-
-    /* Quiz Styles */
     .quiz-container {
-      width: 90%;
+      width: 100%;
       max-width: 800px;
-      margin: 2rem auto;
-      display: flex;
-      overflow: hidden;
-      border-radius: 10px;
-      flex-direction: column;
-      background-color: #000;
+      margin: 3rem auto;
+      padding: 1rem;
+      background-color: rgba(0, 0, 0, 0.8);
+      border-radius: 1rem;
+      box-shadow: 0 0 25px rgba(255, 0, 204, 0.3);
     }
 
     .question {
       display: none;
-      padding: 2rem;
-      background-color: #222;
-      text-align: center;
-      font-size: 1.2rem;
-      color: #fff;
     }
 
     .question.active {
       display: block;
-    }
-
-    .question h3 {
-      margin-bottom: 1rem;
     }
 
     .options {
@@ -135,63 +118,46 @@
     }
 
     .option {
+      background-color: #444;
       padding: 1rem;
-      background-color: #333;
-      border-radius: 5px;
+      border-radius: 0.5rem;
       cursor: pointer;
-      transition: background 0.3s ease;
-      font-size: 1.1rem;
+      text-align: center;
+      transition: background-color 0.3s ease;
     }
 
     .option:hover {
-      background-color: #444;
-    }
-
-    .option.selected {
       background-color: #ff00cc;
-      color: #000;
     }
 
-    /* Button for submitting */
+    .selected {
+      background-color: #00ffcc;
+    }
+
     .submit-button {
+      margin-top: 2rem;
       padding: 1rem 2rem;
       background-color: #ff00cc;
+      color: white;
       border: none;
-      border-radius: 5px;
-      color: #000;
-      font-size: 1.2rem;
+      border-radius: 1rem;
       cursor: pointer;
+      font-size: 1.2rem;
       transition: background-color 0.3s ease;
-      margin-top: 2rem;
     }
 
     .submit-button:hover {
-      background-color: #cc00b3;
+      background-color: #ff6699;
     }
 
-    /* For smaller screens */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      .noticia p {
-        font-size: 0.9rem;
-      }
-      .quiz-container {
-        width: 100%;
-      }
-    }
-
-    /* Ranking Styles */
     .ranking {
       display: none;
-      width: 90%;
-      max-width: 800px;
-      margin: 2rem auto;
-      background-color: #222;
-      padding: 2rem;
+      margin-top: 3rem;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 1rem;
       border-radius: 1rem;
-      color: #fff;
+      width: 100%;
+      max-width: 800px;
     }
 
     .ranking.active {
@@ -199,8 +165,21 @@
     }
 
     .ranking h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
+      color: #00ffff;
+      text-align: center;
+    }
+
+    .ranking div {
+      color: #ddd;
+      text-align: center;
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
+    }
+
+    footer {
+      margin: 3rem 1rem 1rem;
+      font-size: 0.8rem;
+      color: #888;
     }
   </style>
 </head>
@@ -236,11 +215,10 @@
   <!-- Quiz Section -->
   <section class="quiz-container">
     <div class="question active">
-      <h3>1. Qual o nome do protagonista principal de GTA 5?</h3>
+      <h3>1. Quem é o protagonista de GTA 5?</h3>
       <div class="options">
         <div class="option">Michael De Santa</div>
-        <div class="option">Frank
-<div class="option">Franklin Clinton</div>
+        <div class="option">Franklin Clinton</div>
         <div class="option">Trevor Philips</div>
       </div>
     </div>
@@ -256,118 +234,105 @@
     </div>
 
     <div class="question">
-      <h3>3. Qual é o nome do famoso cassino de GTA 5?</h3>
+      <h3>3. Qual é o nome do novo protagonista de GTA 6?</h3>
       <div class="options">
-        <div class="option">Vinewood Casino</div>
-        <div class="option">The Diamond Casino</div>
-        <div class="option">Mile High Club</div>
-        <div class="option">Lucky Wheel</div>
+        <div class="option">Lucia</div>
+        <div class="option">Jason</div>
+        <div class="option">Tommy</div>
+        <div class="option">Niko</div>
       </div>
     </div>
 
     <div class="question">
-      <h3>4. Quem é o dono da empresa de armas em GTA 5?</h3>
+      <h3>4. O que é uma das maiores inovações em GTA 6?</h3>
       <div class="options">
-        <div class="option">Simeon Yetarian</div>
-        <div class="option">Lester Crest</div>
-        <div class="option">Trevor Philips</div>
-        <div class="option">Merriweather Security</div>
+        <div class="option">Gráficos de última geração</div>
+        <div class="option">Novo sistema de combate corpo a corpo</div>
+        <div class="option">IA avançada dos NPCs</div>
+        <div class="option">Modo multiplayer sem limites</div>
       </div>
     </div>
 
-    <div class="question">
-      <h3>5. Qual é a característica única do sistema de carros em GTA 5?</h3>
-      <div class="options">
-        <div class="option">Sistema de danos realistas</div>
-        <div class="option">Mudança dinâmica no comportamento dos carros</div>
-        <div class="option">Troca de carros em qualquer lugar</div>
-        <div class="option">Controle de personalização de carros pela internet</div>
-      </div>
-    </div>
-
-    <!-- Submit Button -->
-    <button class="submit-button" onclick="submitQuiz()">Enviar Respostas</button>
+    <button class="submit-button">Ver Resultados</button>
   </section>
 
-  <!-- Ranking Section -->
   <section class="ranking">
-    <h3>Ranking Atual</h3>
-    <div id="ranking-list">
-      <!-- Ranking list will be populated here -->
-    </div>
+    <h3>Ranking de Pontuação</h3>
+    <div id="ranking-list"></div>
   </section>
 
   <footer>
-    Página criada por Bauer - GTA 6 Fan Page
+    <p>&copy; 2025 GTA 6 News. Todos os direitos reservados.</p>
   </footer>
 
   <script>
-    let currentQuestion = 0;
-    const totalQuestions = 5;
-    const quizAnswers = [];
-    const quizElements = document.querySelectorAll('.question');
+    const options = document.querySelectorAll('.option');
+    const submitButton = document.querySelector('.submit-button');
+    const questions = document.querySelectorAll('.question');
     const rankingSection = document.querySelector('.ranking');
     const rankingList = document.getElementById('ranking-list');
-    const submitButton = document.querySelector('.submit-button');
+    let currentQuestion = 0;
+    let userAnswers = [];
+    let userName = '';
+    let userEmail = '';
 
-    // Display next question
-    function showNextQuestion() {
-      if (currentQuestion < totalQuestions) {
-        quizElements[currentQuestion].classList.remove('active');
-        currentQuestion++;
-        quizElements[currentQuestion].classList.add('active');
-      }
-    }
-
-    // Handle option selection
-    const options = document.querySelectorAll('.option');
     options.forEach(option => {
-      option.addEventListener('click', function() {
-        options.forEach(opt => opt.classList.remove('selected'));
-        this.classList.add('selected');
-        quizAnswers[currentQuestion] = this.textContent;
+      option.addEventListener('click', () => {
+        option.classList.toggle('selected');
+        const otherOptions = option.parentElement.querySelectorAll('.option');
+        otherOptions.forEach(o => {
+          if (o !== option) o.classList.remove('selected');
+        });
       });
     });
 
-    // Submit quiz and show ranking
-    function submitQuiz() {
-      if (quizAnswers.length < totalQuestions) {
-        alert("Por favor, responda todas as perguntas.");
-        return;
-      }
+    submitButton.addEventListener('click', () => {
+      // Collect answers
+      questions.forEach((question, index) => {
+        const selectedOption = question.querySelector('.selected');
+        if (selectedOption) {
+          userAnswers.push(selectedOption.textContent);
+        } else {
+          userAnswers.push(null);
+        }
+      });
 
-      // Hide quiz section and show ranking
-      const quizSection = document.querySelector('.quiz-container');
-      quizSection.style.display = 'none';
+      // Collect name and email
+      userName = prompt('Qual é o seu nome?');
+      userEmail = prompt('Qual é o seu e-mail?');
+
+      // Save data to localStorage (for demo purposes)
+      localStorage.setItem('userAnswers', JSON.stringify(userAnswers));
+      localStorage.setItem('userName', userName);
+      localStorage.setItem('userEmail', userEmail);
+
+      // Show ranking
       rankingSection.classList.add('active');
+      const ranking = [
+        { name: userName, score: calculateScore(userAnswers) }
+      ];
+      renderRanking(ranking);
+    });
 
-      // Save data to database (fake example, you can replace with actual backend)
-      const name = prompt('Informe seu nome:');
-      const email = prompt('Informe seu e-mail:');
-
-      // Save to database (in a real-world scenario, you'd use fetch to submit the data)
-      const rankingEntry = document.createElement('div');
-      rankingEntry.textContent = `${name} (${email}) - Pontuação: ${quizAnswers.length * 10} pontos`;
-      rankingList.appendChild(rankingEntry);
-
-      // Submit the quiz data to your backend
-      fetch('https://sheetdb.io/api/v1/l8nlkcjojys01', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: name,
-          email: email,
-          score: quizAnswers.length * 10
-        })
-      }).then(response => response.json())
-        .then(data => {
-          console.log('Dados salvos com sucesso!', data);
-        })
-        .catch(error => console.error('Erro ao salvar dados:', error));
+    function calculateScore(answers) {
+      const correctAnswers = [
+        'Michael De Santa', 'Los Santos', 'Lucia', 'IA avançada dos NPCs'
+      ];
+      let score = 0;
+      answers.forEach((answer, index) => {
+        if (answer === correctAnswers[index]) score++;
+      });
+      return score;
     }
 
-    // Initial setup to show the first question
-    showNextQuestion();
+    function renderRanking(ranking) {
+      rankingList.innerHTML = ranking.map(entry => {
+        return `<div>${entry.name}: ${entry.score} pontos</div>`;
+      }).join('');
+    }
+
+    // Initial state: Hide ranking section
+    rankingSection.classList.remove('active');
   </script>
 </body>
 </html>
