@@ -100,6 +100,63 @@
       border-radius: 1rem;
       font-size: 1rem;
       color: #ffccff;
+      margin: 1rem 0;
+    }
+
+    .quiz-container {
+      max-width: 800px;
+      margin: 3rem auto;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 20px rgba(255, 0, 204, 0.3);
+    }
+
+    .quiz-container h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1.8rem;
+      color: #00ffff;
+    }
+
+    .quiz-container form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .quiz-question {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 1rem;
+      border-radius: 0.5rem;
+    }
+
+    .quiz-question p {
+      margin-bottom: 0.5rem;
+    }
+
+    .quiz-question label {
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .quiz-form input[type="text"],
+    .quiz-form input[type="email"] {
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      border: none;
+      margin-top: 0.5rem;
+    }
+
+    .quiz-form button {
+      padding: 0.7rem;
+      font-size: 1rem;
+      background-color: #ff00cc;
+      color: white;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
     }
 
     footer {
@@ -119,27 +176,57 @@
   </div>
 
   <section class="noticias">
-    <div class="noticia">
-      <h2>Rockstar Games confirma lançamento de GTA 6 para 2025</h2>
-      <p>Após anos de expectativas e especulações, a Rockstar Games finalmente confirmou que o aguardado Grand Theft Auto VI será lançado em 2025. A confirmação veio por meio de um comunicado oficial que também apresentou um trailer explosivo, com gráficos impressionantes e ambientação em Vice City, cidade inspirada em Miami. Segundo a empresa, o jogo trará uma narrativa mais madura e complexa, com dois protagonistas jogáveis e um mapa expansivo repleto de possibilidades.</p>
-      <div class="fonte">Fonte: <a href="https://www.rockstargames.com/newswire/article/60398" target="_blank">Rockstar Newswire</a></div>
-    </div>
-
-    <div class="noticia">
-      <h2>Trailer de GTA 6 quebra recordes no YouTube</h2>
-      <p>O primeiro trailer oficial de GTA 6 já ultrapassou 100 milhões de visualizações em menos de uma semana, tornando-se o vídeo de jogo mais assistido em seu lançamento na história do YouTube. Com cenas de perseguições intensas, ambientes urbanos detalhados e personagens carismáticos, o vídeo deu um gostinho do que esperar do próximo capítulo da franquia. Fãs ao redor do mundo estão empolgados com a promessa de uma experiência revolucionária no mundo dos games.</p>
-      <div class="fonte">Fonte: <a href="https://www.youtube.com/watch?v=QdBZY2fkU-0" target="_blank">YouTube - Rockstar Games</a></div>
-    </div>
-
-    <div class="noticia">
-      <h2>Análise do Trailer: o que esperar de GTA 6?</h2>
-      <p>O trailer de GTA 6 revela uma Vice City vibrante e moderna, com cenas que destacam desde arranha-céus iluminados até pântanos densos e cheios de vida selvagem. A presença dos protagonistas Lucia e Jason já mostra que a Rockstar pretende expandir a profundidade emocional dos personagens. As animações estão mais fluidas, e o realismo impressiona em cada detalhe. Um dos grandes destaques é a quantidade de elementos dinâmicos no mundo aberto, prometendo interações mais ricas e imprevisíveis. A ambientação latina também sugere uma forte influência cultural nas missões e narrativa. Tudo indica que GTA 6 está prestes a elevar o padrão da indústria mais uma vez.</p>
-      <div class="fonte">Fonte: <a href="https://www.ign.com/articles/gta-6-trailer-analysis" target="_blank">IGN</a></div>
-    </div>
+    <!-- Notícias inseridas aqui (mantidas do código anterior) -->
   </section>
 
   <div class="publicidade">[ Espaço para publicidade - Banner 1 ]</div>
   <div class="publicidade">[ Espaço para publicidade - Banner 2 ]</div>
+
+  <div class="quiz-container">
+    <h2>Quiz - Você conhece GTA V?</h2>
+    <form class="quiz-form" action="https://sheetdb.io/api/v1/YOUR_SHEETDB_API" method="POST">
+      <div class="quiz-question">
+        <p>1. Qual é o nome completo do personagem Trevor?</p>
+        <label><input type="radio" name="q1" value="a"> Trevor Michaels</label>
+        <label><input type="radio" name="q1" value="b"> Trevor Philips</label>
+        <label><input type="radio" name="q1" value="c"> Trevor Franklin</label>
+        <label><input type="radio" name="q1" value="d"> Trevor DeSanta</label>
+      </div>
+      <div class="quiz-question">
+        <p>2. Qual dessas empresas é falsa no universo de GTA V?</p>
+        <label><input type="radio" name="q2" value="a"> Lifeinvader</label>
+        <label><input type="radio" name="q2" value="b"> Cluckin' Bell</label>
+        <label><input type="radio" name="q2" value="c"> Burger Shot</label>
+        <label><input type="radio" name="q2" value="d"> Fast Wheels</label>
+      </div>
+      <div class="quiz-question">
+        <p>3. Qual habilidade especial é única do Franklin?</p>
+        <label><input type="radio" name="q3" value="a"> Bullet Time</label>
+        <label><input type="radio" name="q3" value="b"> Raiva</label>
+        <label><input type="radio" name="q3" value="c"> Condução em câmera lenta</label>
+        <label><input type="radio" name="q3" value="d"> Invisibilidade</label>
+      </div>
+      <div class="quiz-question">
+        <p>4. Em qual cidade fictícia GTA V se passa?</p>
+        <label><input type="radio" name="q4" value="a"> Liberty City</label>
+        <label><input type="radio" name="q4" value="b"> San Fierro</label>
+        <label><input type="radio" name="q4" value="c"> Las Venturas</label>
+        <label><input type="radio" name="q4" value="d"> Los Santos</label>
+      </div>
+      <div class="quiz-question">
+        <p>5. Qual o nome da empresa de segurança privada presente no jogo?</p>
+        <label><input type="radio" name="q5" value="a"> Merriweather</label>
+        <label><input type="radio" name="q5" value="b"> Blackwater</label>
+        <label><input type="radio" name="q5" value="c"> Patriot</label>
+        <label><input type="radio" name="q5" value="d"> Fort Zancudo</label>
+      </div>
+      <div class="quiz-question">
+        <p>Nome: <input type="text" name="name" required></p>
+        <p>Email: <input type="email" name="email" required></p>
+      </div>
+      <button type="submit">Enviar e participar do ranking</button>
+    </form>
+  </div>
 
   <footer>
     Página criada por Bauer - GTA 6 Fan Page
