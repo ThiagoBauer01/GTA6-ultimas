@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GTA6 - Últimas Notícias</title>
+  <title>GTA 6 - Últimas Notícias</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -16,27 +16,15 @@
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
-    }body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(4px);
-  z-index: -1;
-}
-
-header {
+    }header {
   padding: 3rem 1rem 1rem;
   text-align: center;
 }
 
 header h1 {
   font-size: 3rem;
-  color: #00ffc3;
-  text-shadow: 0 0 15px #00ffc3;
+  color: #ff00cc;
+  text-shadow: 0 0 10px #ff00cc;
   margin: 0;
   line-height: 1.2;
 }
@@ -47,7 +35,7 @@ header h1 {
   max-width: 800px;
   border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0 0 25px rgba(0, 255, 195, 0.3);
+  box-shadow: 0 0 25px rgba(255, 0, 204, 0.3);
 }
 
 iframe {
@@ -56,91 +44,94 @@ iframe {
   border: none;
 }
 
-.contador {
-  margin: 2rem 0;
-  font-size: 1.5rem;
-  color: #00ffe1;
-  background: rgba(255,255,255,0.07);
-  padding: 1rem 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 0 15px rgba(0, 255, 195, 0.2);
-}
-
-.notify-btn {
-  margin-top: 1rem;
-  padding: 0.75rem 1.5rem;
-  background: #00ffc3;
-  color: #000;
-  border: none;
-  border-radius: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.notify-btn:hover {
-  background: #00bfa5;
-}
-
 section.noticias {
-  max-width: 900px;
+  max-width: 800px;
   width: 90%;
-  padding: 2rem 1rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
 .noticia {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
   padding: 2rem;
-  border-radius: 1.5rem;
-  box-shadow: 0 0 25px rgba(0, 255, 195, 0.3);
-  border-left: 5px solid #00ffc3;
+  border-radius: 1rem;
+  box-shadow: 0 0 25px rgba(255, 0, 204, 0.3);
   transition: transform 0.3s ease;
 }
 
 .noticia:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 30px rgba(0, 255, 195, 0.6);
-}
-
-.noticia img {
-  width: 100%;
-  border-radius: 1rem;
-  margin-bottom: 1rem;
+  transform: scale(1.02);
 }
 
 .noticia h2 {
-  color: #00ffe1;
+  color: #00ffff;
   font-size: 1.6rem;
-  margin-bottom: 0.8rem;
-  text-align: center;
+  margin-bottom: 1rem;
+  text-align: left;
 }
 
 .noticia p {
-  color: #e0f7fa;
+  color: #ddd;
   font-size: 1.05rem;
-  line-height: 1.6;
+  line-height: 1.8;
   text-align: justify;
 }
 
 .fonte {
-  margin-top: 0.8rem;
-  font-size: 0.85rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
   color: #aaa;
-  text-align: right;
 }
 
 .fonte a {
-  color: #80deea;
+  color: #aaa;
   text-decoration: underline;
+}
+
+.publicidade {
+  background: rgba(255,255,255,0.1);
+  padding: 1rem;
+  text-align: center;
+  border: 2px dashed #ff00cc;
+  border-radius: 1rem;
+  font-size: 1rem;
+  color: #ffccff;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #1a1a1a;
+  color: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px #ff00cc;
+  z-index: 1000;
+  display: none;
+}
+
+.popup.show {
+  display: block;
+}
+
+.popup button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #ff00cc;
+  border: none;
+  color: #fff;
+  border-radius: 0.5rem;
+  cursor: pointer;
 }
 
 footer {
   margin: 3rem 1rem 1rem;
-  font-size: 0.85rem;
-  color: #ccc;
+  font-size: 0.8rem;
+  color: #888;
 }
 
 audio {
@@ -159,37 +150,41 @@ audio {
   </style>
 </head>
 <body>
-  <header>
+  <div class="popup" id="popup">
+    <strong>Promoção Especial:</strong>
+    <p>Garanta seu GTA 6 com desconto exclusivo de pré-venda!</p>
+    <button onclick="document.getElementById('popup').style.display='none'">Fechar</button>
+  </div>  <header>
     <h1>GTA6<br>Últimas notícias</h1>
   </header>  <div class="video-container">
     <iframe src="https://www.youtube.com/embed/QdBZY2fkU-0?rel=0" allowfullscreen></iframe>
-  </div>  <div class="contador" id="contador">Contagem regressiva para o lançamento...</div>
-  <button class="notify-btn" onclick="alert('Notificações ativadas! Você será avisado das próximas novidades.')">Ativar Notificações</button>  <section class="noticias">
+  </div>  <section class="noticias">
     <div class="noticia">
-      <img src="https://i.ytimg.com/vi/QdBZY2fkU-0/maxresdefault.jpg" alt="Cena do trailer de GTA 6">
-      <h2>Rockstar quebra recorde de silêncio</h2>
-      <p>Já são mais de 500 dias sem novas informações oficiais desde o trailer de estreia de GTA 6. Ainda assim, a previsão de lançamento continua marcada para 2025.</p>
+      <h2>Lançamento em 2025</h2>
+      <p>A Rockstar Games finalmente confirmou: Grand Theft Auto VI será lançado no final de 2025, com previsão entre setembro e novembro. Após anos de rumores e especulações, a comunidade gamer pode contar com uma data concreta para o título mais aguardado da década. Segundo o estúdio, o desenvolvimento está em ritmo acelerado e o foco está em garantir uma experiência de mundo aberto ainda mais imersiva e fluida, aproveitando o máximo do poder dos consoles de nova geração. Esse lançamento promete redefinir o gênero sandbox com uma narrativa densa, ambientes realistas e mecânicas avançadas.</p>
       <div class="fonte">
-        Fonte: <a href="https://as.com/meristation/noticias/el-desafortunado-record-de-gta-6-del-que-ningun-fan-de-la-saga-se-alegra-n/" target="_blank">as.com</a><br>
-        Publicado em abril de 2025
+        Fonte: <a href="https://www.rockstargames.com/newswire/article/6ko44760" target="_blank">rockstargames.com</a><br>
+        Publicado em 04/12/2023 às 11:00
       </div>
-    </div><div class="noticia">
-  <img src="https://cdn.mos.cms.futurecdn.net/N3gfQLA92JGxKwV4y5WWEe.jpg" alt="Protagonistas de GTA 6">
-  <h2>Segundo trailer pode demorar</h2>
-  <p>Executivos da Take-Two sugerem que o próximo trailer só será divulgado mais próximo da data de lançamento, como estratégia para manter o hype controlado.</p>
+    </div><div class="publicidade">
+  Espaço para publicidade – Anuncie aqui!
+</div>
+
+<div class="noticia">
+  <h2>Vice City está de volta</h2>
+  <p>Prepare-se para revisitar Vice City como você nunca viu antes. A lendária cidade fictícia inspirada em Miami foi completamente reconstruída para GTA 6, agora com riqueza de detalhes, atmosfera vibrante e dinâmica urbana realista. Com clima tropical, litoral animado e bairros com identidades próprias, Vice City será o palco de uma nova história repleta de ação, drama e decisões impactantes. A Rockstar afirmou que o mapa será expansivo e interativo, com ciclos climáticos, NPCs com rotinas únicas e eventos aleatórios que darão vida à cidade.</p>
   <div class="fonte">
-    Fonte: <a href="https://www.polygon.com/gta-grand-theft-auto/549529/grand-theft-auto-6-gta-second-trailer-rockstar-take-two-strauss-zelnick" target="_blank">polygon.com</a><br>
-    Publicado em abril de 2025
+    Fonte: <a href="https://www.ign.com/articles/gta-6-trailer-vice-city" target="_blank">ign.com</a><br>
+    Publicado em 05/12/2023 às 09:45
   </div>
 </div>
 
 <div class="noticia">
-  <img src="https://images.pushsquare.com/63361d43d9526/gta-6.large.jpg" alt="Mapa especulado do GTA 6">
-  <h2>Risco de adiamento para 2026</h2>
-  <p>Segundo o jornalista Jason Schreier, há chances de GTA 6 ser adiado para 2026, embora oficialmente a Rockstar ainda mantenha 2025 como o ano de lançamento.</p>
+  <h2>Lucia e Jason: protagonistas</h2>
+  <p>O primeiro trailer de GTA 6 revelou os protagonistas que conduzirão a trama: Lucia e Jason. Em uma dinâmica que remete ao clássico casal fora da lei Bonnie e Clyde, a dupla promete protagonizar uma narrativa envolvente, com foco em crimes, relacionamentos e fuga da lei. Lucia, a primeira protagonista feminina jogável da franquia, surge como uma personagem forte, estratégica e determinada. Jason, por outro lado, traz uma abordagem mais impulsiva e explosiva. Juntos, eles prometem levar os jogadores por uma jornada intensa de assaltos, perseguições e decisões morais complexas.</p>
   <div class="fonte">
-    Fonte: <a href="https://as.com/meristation/noticias/jason-schreirer-da-una-pista-sobre-la-fecha-final-de-gta-6-y-su-posible-retraso-n/" target="_blank">as.com</a><br>
-    Publicado em abril de 2025
+    Fonte: <a href="https://www.gameinformer.com/news/2023/12/05/gta-6s-main-characters-are-lucia-and-her-partner" target="_blank">gameinformer.com</a><br>
+    Publicado em 05/12/2023 às 10:20
   </div>
 </div>
 
@@ -197,22 +192,12 @@ audio {
     <source src="https://www.bensound.com/bensound-music/bensound-retrosoul.mp3" type="audio/mp3">
     Seu navegador não suporta áudio embutido.
   </audio>  <footer>
-    Página atualizada por Bauer - GTA 6 Fan Page
+    Página criada por Bauer - GTA 6 Fan Page
   </footer>  <script>
-    const dataLancamento = new Date("2025-10-15T12:00:00").getTime();
-    const contador = document.getElementById("contador");
-    setInterval(() => {
-      const agora = new Date().getTime();
-      const distancia = dataLancamento - agora;
-      if (distancia <= 0) {
-        contador.innerHTML = "GTA 6 já está entre nós!";
-        return;
-      }
-      const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
-      const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
-      const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
-      contador.innerHTML = `Faltam ${dias}d ${horas}h ${minutos}m ${segundos}s para o lançamento!`;
-    }, 1000);
+    window.onload = function () {
+      setTimeout(() => {
+        document.getElementById('popup').classList.add('show');
+      }, 1000);
+    }
   </script></body>
 </html>
