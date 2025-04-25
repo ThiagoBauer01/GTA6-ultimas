@@ -1,99 +1,102 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GTA 6 - Últimas Notícias</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
+      padding: 0;
       font-family: 'Orbitron', sans-serif;
-      color: white;
-      background: linear-gradient(to bottom, #1c1b33, #351c4d);
-      background-image: url('https://cdn.wallpapersafari.com/58/20/ECbiZX.jpg');
-      background-size: cover;
-      background-position: center;
-      backdrop-filter: brightness(0.6);
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
 
     header {
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 2rem;
+      padding: 3rem 1rem 1rem;
       text-align: center;
     }
 
     header h1 {
-      font-size: 3rem;
-      color: #ff5ec6;
+      font-size: 2.8rem;
+      color: #ff00cc;
+      text-shadow: 0 0 10px #ff00cc, 0 0 20px #ff00cc;
       margin: 0;
     }
 
     .video-container {
-      display: flex;
-      justify-content: center;
-      margin: 2rem 0;
-    }
-
-    .video-container iframe {
+      margin: 2rem auto;
       width: 90%;
       max-width: 800px;
-      height: 450px;
-      border: none;
-      border-radius: 1rem;
-      box-shadow: 0 0 20px rgba(0,0,0,0.7);
-    }
-
-    .noticias {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      padding: 2rem;
-      background-color: rgba(0, 0, 0, 0.5);
-    }
-
-    .card {
-      background-color: rgba(255, 255, 255, 0.05);
       border-radius: 1rem;
       overflow: hidden;
-      box-shadow: 0 0 15px rgba(255, 94, 198, 0.3);
-      transition: transform 0.3s;
+      box-shadow: 0 0 25px rgba(255, 0, 204, 0.3);
     }
 
-    .card:hover {
-      transform: scale(1.03);
-    }
-
-    .card img {
+    iframe {
       width: 100%;
-      height: 180px;
-      object-fit: cover;
+      height: 450px;
+      border: none;
     }
 
-    .card-content {
+    section.noticias {
+      max-width: 800px;
+      width: 90%;
       padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
     }
 
-    .card-content h2 {
-      font-size: 1.2rem;
-      margin: 0 0 0.5rem;
-      color: #ffb347;
+    .noticia {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 15px rgba(255, 0, 204, 0.2);
+      transition: background 0.3s;
     }
 
-    .card-content p {
-      font-size: 0.95rem;
-      color: #ddd;
+    .noticia:hover {
+      background: rgba(255, 255, 255, 0.1);
     }
 
-    .card-content a {
-      display: inline-block;
-      margin-top: 0.5rem;
+    .noticia h2 {
       color: #00ffff;
-      text-decoration: none;
+      text-shadow: 0 0 8px #00ffff;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
     }
 
-    .card-content a:hover {
-      text-decoration: underline;
+    .noticia p {
+      color: #ddd;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    footer {
+      margin: 3rem 1rem 1rem;
+      font-size: 0.8rem;
+      color: #888;
+    }
+
+    audio {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      iframe {
+        height: 250px;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
@@ -103,41 +106,33 @@
   </header>
 
   <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/QdBZY2fkU-0?autoplay=0&rel=0" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/QdBZY2fkU-0?rel=0" allowfullscreen></iframe>
   </div>
+
+  <section class="noticias">
+    <div class="noticia">
+      <h2>Lançamento em 2025</h2>
+      <p>A Rockstar confirmou oficialmente que GTA 6 será lançado no final de 2025, entre setembro e novembro.</p>
+    </div>
+
+    <div class="noticia">
+      <h2>Vice City está de volta</h2>
+      <p>A clássica cidade retorna com visual repaginado, inspirada no sul da Flórida com gráficos impressionantes.</p>
+    </div>
+
+    <div class="noticia">
+      <h2>Protagonistas: Lucia e parceiro</h2>
+      <p>O enredo gira em torno de uma dupla criminosa, seguindo uma vibe “Bonnie e Clyde” moderna e intensa.</p>
+    </div>
+  </section>
 
   <audio autoplay loop>
     <source src="https://www.bensound.com/bensound-music/bensound-retrosoul.mp3" type="audio/mp3">
     Seu navegador não suporta áudio embutido.
   </audio>
 
-  <section class="noticias">
-    <div class="card">
-      <img src="https://cdn.mos.cms.futurecdn.net/M52KvZNHq3y8x7BFdzbAXd.jpg" alt="Vice City GTA 6">
-      <div class="card-content">
-        <h2>Lançamento previsto para fim de 2025</h2>
-        <p>Rockstar Games confirma que GTA 6 chega entre setembro e novembro de 2025.</p>
-        <a href="#">Saiba mais</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://www.dexerto.com/cdn-image/wp-content/uploads/2023/12/05/gta-6-trailer-release-date.jpeg" alt="Trailer GTA 6">
-      <div class="card-content">
-        <h2>Segundo trailer pode sair em breve</h2>
-        <p>Rumores indicam lançamento de um novo trailer oficial ainda em 2025.</p>
-        <a href="#">Saiba mais</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://images2.alphacoders.com/133/1337196.jpeg" alt="Lucia e parceiro GTA 6">
-      <div class="card-content">
-        <h2>Conheça Lucia e seu parceiro</h2>
-        <p>Protagonistas formarão uma dupla criminosa estilo Bonnie e Clyde em Vice City.</p>
-        <a href="#">Saiba mais</a>
-      </div>
-    </div>
-  </section>
+  <footer>
+    Página criada por Bauer - GTA 6 Fan Page
+  </footer>
 </body>
 </html>
