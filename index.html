@@ -1,238 +1,183 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GTA 5 Quiz</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GTA 6 - Quiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #1b1b1b;
-      color: #fff;
-      text-align: center;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
       margin: 0;
       padding: 0;
     }
+    header {
+      padding: 1rem;
+      text-align: center;
+    }
+    header h1 {
+      color: #ff00cc;
+      text-shadow: 0 0 10px #ff00cc;
+    }
     .quiz-container {
-      max-width: 600px;
-      margin: auto;
-      padding: 2rem;
-      background-color: rgba(0, 0, 0, 0.8);
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(255, 0, 204, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 2rem;
+    }
+    .question-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     .question {
-      display: none;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
     }
-    .question.active {
-      display: block;
-    }
-    .options div {
-      background-color: #333;
-      padding: 10px;
-      margin: 5px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-    .options div:hover {
-      background-color: #444;
-    }
-    .submit-button {
-      padding: 10px 20px;
+    .options button {
       background-color: #ff00cc;
-      border: none;
       color: white;
+      border: none;
+      padding: 1rem;
+      margin: 0.5rem;
       cursor: pointer;
-      font-size: 1rem;
+      width: 200px;
       border-radius: 5px;
+      font-size: 1.2rem;
     }
-    .submit-button:hover {
-      background-color: #ff3385;
+    .options button:hover {
+      background-color: #e600b3;
     }
-    .ranking {
-      margin-top: 2rem;
+    .ranking-container {
       display: none;
+      flex-direction: column;
+      align-items: center;
     }
-    .ranking.active {
-      display: block;
-    }
-    .ranking ul {
-      list-style: none;
+    .ranking-container ul {
+      list-style-type: none;
       padding: 0;
-    }
-    .ranking ul li {
-      margin: 10px 0;
+      font-size: 1.2rem;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>GTA 5 Quiz</h1>
+    <h1>GTA 6 - Quiz</h1>
   </header>
-  
+
   <div class="quiz-container">
-    <div id="question-1" class="question active">
-      <h3>1. Qual é o nome do protagonista principal de GTA 5?</h3>
-      <div class="options">
-        <div class="option" data-answer="Michael De Santa">Michael De Santa</div>
-        <div class="option" data-answer="Franklin Clinton">Franklin Clinton</div>
-        <div class="option" data-answer="Trevor Philips">Trevor Philips</div>
-        <div class="option" data-answer="Niko Bellic">Niko Bellic</div>
+    <div class="question-container">
+      <div class="question" id="question-text">Pergunta 1: Qual é a cidade principal de GTA 5?</div>
+      <div class="options" id="options-container">
+        <button onclick="nextQuestion(0)">Los Santos</button>
+        <button onclick="nextQuestion(1)">Vice City</button>
+        <button onclick="nextQuestion(2)">Liberty City</button>
+        <button onclick="nextQuestion(3)">San Fierro</button>
       </div>
-    </div>
-
-    <div id="question-2" class="question">
-      <h3>2. Onde se passa a maior parte da ação em GTA 5?</h3>
-      <div class="options">
-        <div class="option" data-answer="Los Santos">Los Santos</div>
-        <div class="option" data-answer="Vice City">Vice City</div>
-        <div class="option" data-answer="Liberty City">Liberty City</div>
-        <div class="option" data-answer="San Fierro">San Fierro</div>
-      </div>
-    </div>
-
-    <div id="question-3" class="question">
-      <h3>3. Qual é o nome do amigo de infância de Franklin em GTA 5?</h3>
-      <div class="options">
-        <div class="option" data-answer="Lamar Davis">Lamar Davis</div>
-        <div class="option" data-answer="Steve Haines">Steve Haines</div>
-        <div class="option" data-answer="Martin Madrazo">Martin Madrazo</div>
-        <div class="option" data-answer="Chop">Chop</div>
-      </div>
-    </div>
-
-    <div id="question-4" class="question">
-      <h3>4. Quem é o chefe da máfia mexicana em GTA 5?</h3>
-      <div class="options">
-        <div class="option" data-answer="Martin Madrazo">Martin Madrazo</div>
-        <div class="option" data-answer="Hector Ramos">Hector Ramos</div>
-        <div class="option" data-answer="Ricardo Silva">Ricardo Silva</div>
-        <div class="option" data-answer="Mitch Hayes">Mitch Hayes</div>
-      </div>
-    </div>
-
-    <div id="question-5" class="question">
-      <h3>5. Qual é o nome do gangue rival de Trevor?</h3>
-      <div class="options">
-        <div class="option" data-answer="The Lost MC">The Lost MC</div>
-        <div class="option" data-answer="The Vagos">The Vagos</div>
-        <div class="option" data-answer="Ballas">Ballas</div>
-        <div class="option" data-answer="Marauders">Marauders</div>
-      </div>
-    </div>
-
-    <div id="final-form" class="question">
-      <h3>Informe seu nome e e-mail</h3>
-      <input type="text" id="name" placeholder="Seu nome" />
-      <input type="email" id="email" placeholder="Seu e-mail" />
-      <button class="submit-button" id="submit-form">Enviar</button>
     </div>
   </div>
 
-  <div class="ranking">
-    <h3>Ranking Atual</h3>
-    <ul id="ranking-list">
-      <!-- Ranking será inserido aqui -->
-    </ul>
+  <div class="ranking-container" id="ranking-container">
+    <h2>Ranking</h2>
+    <ul id="ranking-list"></ul>
   </div>
 
   <script>
-    let currentQuestion = 1;
-    let userAnswers = [];
+    const questions = [
+      {
+        question: "Qual é a cidade principal de GTA 5?",
+        options: ["Los Santos", "Vice City", "Liberty City", "San Fierro"],
+        correctAnswer: 0
+      },
+      {
+        question: "Quem é o protagonista principal de GTA 5?",
+        options: ["Trevor", "Michael", "Franklin", "Niko Bellic"],
+        correctAnswer: 1
+      },
+      {
+        question: "Em que ano GTA 5 foi lançado?",
+        options: ["2013", "2014", "2012", "2015"],
+        correctAnswer: 0
+      },
+      {
+        question: "Qual é a principal atividade no jogo GTA 5?",
+        options: ["Roubo a banco", "Corridas ilegais", "Missões de espionagem", "Tráfico de drogas"],
+        correctAnswer: 0
+      },
+      {
+        question: "Quantos protagonistas há em GTA 5?",
+        options: ["1", "2", "3", "4"],
+        correctAnswer: 2
+      }
+    ];
 
-    // Exibir próxima pergunta
-    function showNextQuestion() {
-      const currentQuestionElement = document.getElementById(`question-${currentQuestion}`);
-      currentQuestionElement.classList.remove('active');
+    let currentQuestion = 0;
+    let score = 0;
+    const playerName = prompt("Qual seu nome?");
+    const playerEmail = prompt("Qual seu e-mail?");
+
+    function nextQuestion(selectedOption) {
+      if (selectedOption === questions[currentQuestion].correctAnswer) {
+        score++;
+      }
 
       currentQuestion++;
-      if (currentQuestion <= 5) {
-        const nextQuestionElement = document.getElementById(`question-${currentQuestion}`);
-        nextQuestionElement.classList.add('active');
+      if (currentQuestion < questions.length) {
+        document.getElementById("question-text").textContent = questions[currentQuestion].question;
+        const optionsContainer = document.getElementById("options-container");
+        optionsContainer.innerHTML = '';
+        questions[currentQuestion].options.forEach((option, index) => {
+          const button = document.createElement('button');
+          button.textContent = option;
+          button.onclick = () => nextQuestion(index);
+          optionsContainer.appendChild(button);
+        });
       } else {
-        showFinalForm();
+        submitScore();
       }
     }
 
-    // Mostrar formulário final
-    function showFinalForm() {
-      document.getElementById('final-form').classList.add('active');
-    }
+    function submitScore() {
+      const data = {
+        name: playerName,
+        email: playerEmail,
+        score: score
+      };
 
-    // Armazenar respostas
-    document.querySelectorAll('.option').forEach(option => {
-      option.addEventListener('click', () => {
-        const selectedAnswer = option.dataset.answer;
-        userAnswers.push(selectedAnswer);
-        showNextQuestion();
-      });
-    });
-
-    // Enviar dados e atualizar o ranking
-    document.getElementById('submit-form').addEventListener('click', () => {
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-
-      if (name && email) {
-        // Enviar para o banco de dados (substitua com seu próprio código de envio)
-        const userData = { name, email, score: calculateScore(userAnswers) };
-        saveToDatabase(userData);
-
-        // Exibir ranking
-        displayRanking();
-      } else {
-        alert("Por favor, preencha seu nome e e-mail.");
-      }
-    });
-
-    // Calcular pontuação
-    function calculateScore(answers) {
-      const correctAnswers = [
-        'Michael De Santa', 'Los Santos', 'Lamar Davis', 'Martin Madrazo', 'The Lost MC'
-      ];
-      let score = 0;
-      answers.forEach((answer, index) => {
-        if (answer === correctAnswers[index]) score++;
-      });
-      return score;
-    }
-
-    // Salvar no banco de dados
-    function saveToDatabase(userData) {
       fetch('https://sheetdb.io/api/v1/l8nlkcjojys01', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json'
         },
-        body: JSON.stringify(userData),
-      })
-      .then(response => response.json())
-      .then(data => console.log('Dados enviados com sucesso:', data))
-      .catch(error => console.error('Erro ao salvar dados:', error));
+        body: JSON.stringify([data])
+      }).then(response => response.json())
+        .then(() => {
+          document.querySelector('.quiz-container').style.display = 'none';
+          document.getElementById('ranking-container').style.display = 'flex';
+          displayRanking();
+        });
     }
 
-    // Exibir ranking
     function displayRanking() {
-      document.querySelector('.quiz-container').style.display = 'none';
-      document.querySelector('.ranking').classList.add('active');
-      
-      // Carregar ranking (isso é apenas um exemplo. A consulta ao banco de dados deve ser feita aqui)
-      const ranking = [
-        { name: 'Jogador 1', score: 5 },
-        { name: 'Jogador 2', score: 4 },
-        { name: 'Jogador 3', score: 3 },
-      ];
-
-      const rankingList = document.getElementById('ranking-list');
-      rankingList.innerHTML = ''; // Limpar lista existente
-
-      ranking.forEach(player => {
-        const listItem = document.createElement('li');
-        listItem.textContent = `${player.name} - Pontuação: ${player.score}`;
-        rankingList.appendChild(listItem);
-      });
+      fetch('https://sheetdb.io/api/v1/l8nlkcjojys01')
+        .then(response => response.json())
+        .then(data => {
+          const ranking = data.sort((a, b) => b.score - a.score).slice(0, 5);
+          const rankingList = document.getElementById('ranking-list');
+          rankingList.innerHTML = ''; // Limpar lista existente
+          ranking.forEach(player => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${player.name} - Pontuação: ${player.score}`;
+            rankingList.appendChild(listItem);
+          });
+        });
     }
   </script>
 </body>
