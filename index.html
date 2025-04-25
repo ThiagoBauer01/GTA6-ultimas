@@ -240,3 +240,134 @@
       <div class="options">
         <div class="option">Michael De Santa</div>
         <div class="option">Frank
+<div class="option">Franklin Clinton</div>
+        <div class="option">Trevor Philips</div>
+      </div>
+    </div>
+
+    <div class="question">
+      <h3>2. Em que cidade fictícia se passa GTA 5?</h3>
+      <div class="options">
+        <div class="option">Los Santos</div>
+        <div class="option">Vice City</div>
+        <div class="option">Liberty City</div>
+        <div class="option">San Fierro</div>
+      </div>
+    </div>
+
+    <div class="question">
+      <h3>3. Qual é o nome do famoso cassino de GTA 5?</h3>
+      <div class="options">
+        <div class="option">Vinewood Casino</div>
+        <div class="option">The Diamond Casino</div>
+        <div class="option">Mile High Club</div>
+        <div class="option">Lucky Wheel</div>
+      </div>
+    </div>
+
+    <div class="question">
+      <h3>4. Quem é o dono da empresa de armas em GTA 5?</h3>
+      <div class="options">
+        <div class="option">Simeon Yetarian</div>
+        <div class="option">Lester Crest</div>
+        <div class="option">Trevor Philips</div>
+        <div class="option">Merriweather Security</div>
+      </div>
+    </div>
+
+    <div class="question">
+      <h3>5. Qual é a característica única do sistema de carros em GTA 5?</h3>
+      <div class="options">
+        <div class="option">Sistema de danos realistas</div>
+        <div class="option">Mudança dinâmica no comportamento dos carros</div>
+        <div class="option">Troca de carros em qualquer lugar</div>
+        <div class="option">Controle de personalização de carros pela internet</div>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button class="submit-button" onclick="submitQuiz()">Enviar Respostas</button>
+  </section>
+
+  <!-- Ranking Section -->
+  <section class="ranking">
+    <h3>Ranking Atual</h3>
+    <div id="ranking-list">
+      <!-- Ranking list will be populated here -->
+    </div>
+  </section>
+
+  <footer>
+    Página criada por Bauer - GTA 6 Fan Page
+  </footer>
+
+  <script>
+    let currentQuestion = 0;
+    const totalQuestions = 5;
+    const quizAnswers = [];
+    const quizElements = document.querySelectorAll('.question');
+    const rankingSection = document.querySelector('.ranking');
+    const rankingList = document.getElementById('ranking-list');
+    const submitButton = document.querySelector('.submit-button');
+
+    // Display next question
+    function showNextQuestion() {
+      if (currentQuestion < totalQuestions) {
+        quizElements[currentQuestion].classList.remove('active');
+        currentQuestion++;
+        quizElements[currentQuestion].classList.add('active');
+      }
+    }
+
+    // Handle option selection
+    const options = document.querySelectorAll('.option');
+    options.forEach(option => {
+      option.addEventListener('click', function() {
+        options.forEach(opt => opt.classList.remove('selected'));
+        this.classList.add('selected');
+        quizAnswers[currentQuestion] = this.textContent;
+      });
+    });
+
+    // Submit quiz and show ranking
+    function submitQuiz() {
+      if (quizAnswers.length < totalQuestions) {
+        alert("Por favor, responda todas as perguntas.");
+        return;
+      }
+
+      // Hide quiz section and show ranking
+      const quizSection = document.querySelector('.quiz-container');
+      quizSection.style.display = 'none';
+      rankingSection.classList.add('active');
+
+      // Save data to database (fake example, you can replace with actual backend)
+      const name = prompt('Informe seu nome:');
+      const email = prompt('Informe seu e-mail:');
+
+      // Save to database (in a real-world scenario, you'd use fetch to submit the data)
+      const rankingEntry = document.createElement('div');
+      rankingEntry.textContent = `${name} (${email}) - Pontuação: ${quizAnswers.length * 10} pontos`;
+      rankingList.appendChild(rankingEntry);
+
+      // Submit the quiz data to your backend
+      fetch('https://sheetdb.io/api/v1/l8nlkcjojys01', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          score: quizAnswers.length * 10
+        })
+      }).then(response => response.json())
+        .then(data => {
+          console.log('Dados salvos com sucesso!', data);
+        })
+        .catch(error => console.error('Erro ao salvar dados:', error));
+    }
+
+    // Initial setup to show the first question
+    showNextQuestion();
+  </script>
+</body>
+</html>
