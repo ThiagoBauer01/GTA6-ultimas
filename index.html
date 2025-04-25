@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -15,246 +16,267 @@
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
-    }header {
-  padding: 3rem 1rem 1rem;
-  text-align: center;
-}
+    }
 
-header h1 {
-  font-size: 3rem;
-  color: #ff00cc;
-  text-shadow: 0 0 10px #ff00cc;
-  margin: 0;
-  line-height: 1.2;
-}
+    header {
+      padding: 3rem 1rem 1rem;
+      text-align: center;
+    }
 
-.video-container {
-  margin: 2rem auto;
-  width: 90%;
-  max-width: 800px;
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 0 25px rgba(255, 0, 204, 0.3);
-}
+    header h1 {
+      font-size: 3rem;
+      color: #ff00cc;
+      text-shadow: 0 0 10px #ff00cc;
+      margin: 0;
+      line-height: 1.2;
+    }
 
-iframe {
-  width: 100%;
-  height: 450px;
-  border: none;
-}
+    .video-container {
+      margin: 2rem auto;
+      width: 90%;
+      max-width: 800px;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 0 25px rgba(255, 0, 204, 0.3);
+    }
 
-section.noticias {
-  max-width: 800px;
-  width: 90%;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
+    iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+    }
 
-.noticia {
-  background: rgba(0, 0, 0, 0.7);
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 0 25px rgba(255, 0, 204, 0.3);
-  transition: transform 0.3s ease;
-}
+    section.noticias {
+      max-width: 800px;
+      width: 90%;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
 
-.noticia:hover {
-  transform: scale(1.02);
-}
+    .noticia {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 25px rgba(255, 0, 204, 0.3);
+      transition: transform 0.3s ease;
+    }
 
-.noticia h2 {
-  color: #00ffff;
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-  text-align: center;
-}
+    .noticia:hover {
+      transform: scale(1.02);
+    }
 
-.noticia p {
-  color: #ddd;
-  font-size: 1.05rem;
-  line-height: 1.8;
-  text-align: justify;
-}
+    .noticia h2 {
+      color: #00ffff;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
 
-.fonte {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  color: #aaa;
-  text-align: right;
-}
+    .noticia p {
+      color: #ddd;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      text-align: justify;
+    }
 
-.fonte a {
-  color: #aaa;
-  text-decoration: underline;
-}
+    .fonte {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #aaa;
+      text-align: right;
+    }
 
-.quiz-container {
-  width: 90%;
-  max-width: 800px;
-  margin: 3rem auto;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 0 25px rgba(255, 0, 204, 0.3);
-}
+    .fonte a {
+      color: #aaa;
+      text-decoration: underline;
+    }
 
-.question {
-  display: none;
-}
+    footer {
+      margin: 3rem 1rem 1rem;
+      font-size: 0.8rem;
+      color: #888;
+    }
 
-.question.active {
-  display: block;
-}
+    /* Quiz Styles */
+    .quiz-container {
+      width: 90%;
+      max-width: 800px;
+      margin: 2rem auto;
+      display: flex;
+      overflow: hidden;
+      border-radius: 10px;
+      flex-direction: column;
+      background-color: #000;
+    }
 
-.question h3 {
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
-  color: #00ffff;
-}
+    .question {
+      display: none;
+      padding: 2rem;
+      background-color: #222;
+      text-align: center;
+      font-size: 1.2rem;
+      color: #fff;
+    }
 
-.options label {
-  display: block;
-  margin-bottom: 0.5rem;
-  cursor: pointer;
-}
+    .question.active {
+      display: block;
+    }
 
-.next-btn {
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background: #00ffff;
-  color: #000;
-  border: none;
-  cursor: pointer;
-  border-radius: 0.5rem;
-}
+    .question h3 {
+      margin-bottom: 1rem;
+    }
 
-.formulario {
-  display: none;
-  flex-direction: column;
-  gap: 1rem;
-}
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
 
-.formulario input {
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  border: none;
-}
+    .option {
+      padding: 1rem;
+      background-color: #333;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
 
-.formulario button {
-  padding: 0.5rem;
-  background-color: #00ffff;
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
-}
+    .option:hover {
+      background-color: #444;
+    }
 
-footer {
-  margin: 3rem 1rem 1rem;
-  font-size: 0.8rem;
-  color: #888;
-}
-
+    /* For smaller screens */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .noticia p {
+        font-size: 0.9rem;
+      }
+      .quiz-container {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>GTA 6<br>Últimas Atualizações</h1>
-  </header>  <div class="video-container">
+  </header>
+
+  <div class="video-container">
     <iframe src="https://www.youtube.com/embed/QdBZY2fkU-0?rel=0" allowfullscreen></iframe>
-  </div>  <section class="noticias">
-    <!-- Notícias já incluídas aqui (não alteradas) -->
-  </section>  <div class="quiz-container">
-    <div id="quiz">
-      <div class="question active">
-        <h3>1. Qual o nome completo do protagonista Michael em GTA V?</h3>
-        <div class="options">
-          <label><input type="radio" name="q1" value="0"> Michael Sanders</label>
-          <label><input type="radio" name="q1" value="1"> Michael De Santa</label>
-          <label><input type="radio" name="q1" value="0"> Michael Vercetti</label>
-          <label><input type="radio" name="q1" value="0"> Michael Franklin</label>
-        </div>
-        <button class="next-btn">Próxima</button>
+  </div>
+
+  <section class="noticias">
+    <div class="noticia">
+      <h2>Rockstar Games revela data de lançamento e detalhes surpreendentes de GTA 6</h2>
+      <p>Após anos de especulações, a Rockstar Games confirmou que Grand Theft Auto VI será lançado oficialmente em 2025. O anúncio foi acompanhado por um trailer cinematográfico que quebrou recordes de visualização e colocou os fãs em êxtase. O jogo será ambientado em uma versão moderna de Vice City, fortemente inspirada na vibrante cidade de Miami. A narrativa será centrada em dois protagonistas, Lucia e Jason, cuja dinâmica remete ao estilo "Bonnie e Clyde". A Rockstar destacou que a história será mais pessoal e emocional do que qualquer outra na franquia. A cidade contará com novos sistemas de física, clima dinâmico e comportamentos de NPCs baseados em IA que prometem elevar o nível de imersão.</p>
+      <div class="fonte">Fonte: Rockstar Games</div>
+    </div>
+
+    <div class="noticia">
+      <h2>Trailer de GTA 6 atinge marco histórico e gera reações intensas</h2>
+      <p>O trailer de revelação de GTA 6 atingiu a marca impressionante de 100 milhões de visualizações em menos de uma semana no YouTube. Essa conquista solidifica o jogo como o título mais aguardado da década. As reações da comunidade gamer foram majoritariamente positivas, destacando os gráficos revolucionários, os ambientes vivos e detalhados e a diversidade cultural retratada. Muitos fãs notaram a presença de cenários nunca antes vistos na série, como zonas pantanosas, praias movimentadas, arranha-céus futuristas e até perseguições com animais selvagens. A qualidade visual indica uma evolução do motor gráfico RAGE da Rockstar, que agora permite reflexos em tempo real, animações faciais avançadas e efeitos climáticos cinematográficos.</p>
+      <div class="fonte">Fonte: YouTube - Rockstar Games</div>
+    </div>
+
+    <div class="noticia">
+      <h2>Análise aprofundada do trailer de GTA 6</h2>
+      <p>O primeiro vislumbre de GTA 6 através de seu trailer oficial revela muito mais do que uma cidade vibrante: ele indica uma nova filosofia de design por parte da Rockstar. A ambientação em Vice City modernizada é repleta de contrastes, onde o luxo dos cassinos e festas se mistura à realidade de zonas carentes e ruas movimentadas por influenciadores digitais e gangues locais. A personagem Lucia é vista em diversas situações, desde confrontos armados até cenas emocionais, o que sugere um arco de desenvolvimento rico. O trailer também faz referências a temas atuais como redes sociais, fake news e a economia informal. Essa abordagem contemporânea poderá colocar GTA 6 como um marco narrativo e tecnológico na indústria dos jogos.</p>
+      <div class="fonte">Fonte: IGN</div>
+    </div>
+  </section>
+
+  <!-- Quiz Section -->
+  <section class="quiz-container">
+    <div class="question active">
+      <h3>1. Qual o nome do protagonista principal de GTA 5?</h3>
+      <div class="options">
+        <div class="option">Michael De Santa</div>
+        <div class="option">Franklin Clinton</div>
+        <div class="option">Trevor Philips</div>
+        <div class="option">Niko Bellic</div>
       </div>
-      <!-- Demais questões serão inseridas dinamicamente via script -->
     </div>
-    <div class="formulario">
-      <input type="text" id="nome" placeholder="Seu nome" required />
-      <input type="email" id="email" placeholder="Seu e-mail" required />
-      <button id="enviar">Enviar Respostas</button>
+
+    <div class="question">
+      <h3>2. Em qual cidade GTA 5 é ambientado?</h3>
+      <div class="options">
+        <div class="option">Liberty City</div>
+        <div class="option">Los Santos</div>
+        <div class="option">Vice City</div>
+        <div class="option">San Fierro</div>
+      </div>
     </div>
-  </div>  <footer>
+
+    <div class="question">
+      <h3>3. Qual é o nome da empresa responsável pela franquia GTA?</h3>
+      <div class="options">
+        <div class="option">Ubisoft</div>
+        <div class="option">EA Games</div>
+        <div class="option">Rockstar Games</div>
+        <div class="option">Naughty Dog</div>
+      </div>
+    </div>
+
+    <div class="question">
+      <h3>4. Qual era o nome do personagem principal de GTA: San Andreas?</h3>
+      <div class="options">
+        <div class="option">Carl "CJ" Johnson</div>
+        <div class="option">Tommy Vercetti</div>
+        <div class="option">Claude</div>
+        <div class="option">Johnny Klebitz</div>
+      </div>
+    </div>
+
+    <div class="question">
+      <h3>5. Em qual ano foi lançado GTA V?</h3>
+      <div class="options">
+        <div class="option">2013</div>
+        <div class="option">2010</div>
+        <div class="option">2015</div>
+        <div class="option">2012</div>
+      </div>
+    </div>
+    
+    <div class="question">
+      <h3>Nome</h3>
+      <input type="text" id="name" placeholder="Digite seu nome">
+      <h3>Email</h3>
+      <input type="email" id="email" placeholder="Digite seu e-mail">
+      <button onclick="submitQuiz()">Enviar</button>
+    </div>
+  </section>
+
+  <footer>
     Página criada por Bauer - GTA 6 Fan Page
-  </footer>  <script>
-    const perguntas = [
-      {
-        q: "2. Qual a cidade fictícia baseada em Los Angeles presente em GTA V?",
-        op: ["Vice City", "San Fierro", "Los Santos", "Liberty City"],
-        correta: 2
-      },
-      {
-        q: "3. Qual destes personagens não é jogável em GTA V?",
-        op: ["Franklin", "Lester", "Trevor", "Michael"],
-        correta: 1
-      },
-      {
-        q: "4. Qual empresa produz o GTA V?",
-        op: ["Ubisoft", "EA Games", "Rockstar Games", "Bethesda"],
-        correta: 2
-      },
-      {
-        q: "5. Em que ano foi lançado o GTA V?",
-        op: ["2010", "2013", "2015", "2018"],
-        correta: 1
-      }
-    ];
+  </footer>
 
-    const quiz = document.getElementById('quiz');
-    const formulario = document.querySelector('.formulario');
-    let current = 0;
-    let score = 0;
+  <script>
+    const questions = document.querySelectorAll('.question');
+    let currentQuestion = 0;
 
-    const nextBtns = document.querySelectorAll('.next-btn');
+    function changeQuestion() {
+      questions[currentQuestion].classList.remove('active');
+      currentQuestion = (currentQuestion + 1) % questions.length;
+      questions[currentQuestion].classList.add('active');
+    }
 
-    nextBtns.forEach(btn => btn.addEventListener('click', () => {
-      const currentQuestion = quiz.children[current];
-      const inputs = currentQuestion.querySelectorAll('input');
-      inputs.forEach(input => {
-        if (input.checked && parseInt(input.value)) score++;
+    document.querySelectorAll('.option').forEach(option => {
+      option.addEventListener('click', () => {
+        changeQuestion();
       });
-      currentQuestion.classList.remove('active');
-      current++;
-      if (current < perguntas.length + 1) {
-        if (!quiz.children[current]) {
-          const q = perguntas[current - 1];
-          const div = document.createElement('div');
-          div.className = 'question active';
-          div.innerHTML = `<h3>${q.q}</h3><div class='options'>` +
-            q.op.map((op, i) => `<label><input type='radio' name='q${current + 1}' value='${i === q.correta ? 1 : 0}'> ${op}</label>`).join('') +
-            `</div><button class='next-btn'>Próxima</button>`;
-          quiz.appendChild(div);
-          div.querySelector('.next-btn').addEventListener('click', () => nextBtns[0].click());
-        } else {
-          quiz.children[current].classList.add('active');
-        }
-      } else {
-        formulario.style.display = 'flex';
-        quiz.style.display = 'none';
-      }
-    }));
-
-    document.getElementById('enviar').addEventListener('click', async () => {
-      const nome = document.getElementById('nome').value;
-      const email = document.getElementById('email').value;
-      if (nome && email) {
-        await fetch('https://sheetdb.io/api/v1/l8nlkcjojys01', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ data: [{ Nome: nome, Email: email, Pontuacao: score }] })
-        });
-        alert('Respostas enviadas com sucesso!');
-      }
     });
-  </script></body>
+
+    function submitQuiz() {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+
+      // Aqui você pode enviar os dados para o banco de dados via API ou outro método
+      alert('Dados enviados para o ranking');
+    }
+  </script>
+</body>
 </html>
