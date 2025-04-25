@@ -1,184 +1,136 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GTA 6 - Quiz</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GTA 6 - Últimas Atualizações</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-      color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
       margin: 0;
       padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
     }
+
     header {
-      padding: 1rem;
+      padding: 3rem 1rem 1rem;
       text-align: center;
     }
+
     header h1 {
+      font-size: 3rem;
       color: #ff00cc;
       text-shadow: 0 0 10px #ff00cc;
+      margin: 0;
+      line-height: 1.2;
     }
-    .quiz-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 2rem;
+
+    .video-container {
+      margin: 2rem auto;
+      width: 90%;
+      max-width: 800px;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 0 25px rgba(255, 0, 204, 0.3);
     }
-    .question-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .question {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-    .options button {
-      background-color: #ff00cc;
-      color: white;
+
+    iframe {
+      width: 100%;
+      height: 450px;
       border: none;
+    }
+
+    section.noticias {
+      max-width: 800px;
+      width: 90%;
       padding: 1rem;
-      margin: 0.5rem;
-      cursor: pointer;
-      width: 200px;
-      border-radius: 5px;
-      font-size: 1.2rem;
-    }
-    .options button:hover {
-      background-color: #e600b3;
-    }
-    .ranking-container {
-      display: none;
+      display: flex;
       flex-direction: column;
-      align-items: center;
+      gap: 2rem;
     }
-    .ranking-container ul {
-      list-style-type: none;
-      padding: 0;
-      font-size: 1.2rem;
+
+    .noticia {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 25px rgba(255, 0, 204, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .noticia:hover {
+      transform: scale(1.02);
+    }
+
+    .noticia h2 {
+      color: #00ffff;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .noticia p {
+      color: #ddd;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      text-align: justify;
+    }
+
+    .fonte {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #aaa;
+      text-align: right;
+    }
+
+    .fonte a {
+      color: #aaa;
+      text-decoration: underline;
+    }
+
+    footer {
+      margin: 3rem 1rem 1rem;
+      font-size: 0.8rem;
+      color: #888;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>GTA 6 - Quiz</h1>
+    <h1>GTA 6<br>Últimas Atualizações</h1>
   </header>
 
-  <div class="quiz-container">
-    <div class="question-container">
-      <div class="question" id="question-text">Pergunta 1: Qual é a cidade principal de GTA 5?</div>
-      <div class="options" id="options-container">
-        <button onclick="nextQuestion(0)">Los Santos</button>
-        <button onclick="nextQuestion(1)">Vice City</button>
-        <button onclick="nextQuestion(2)">Liberty City</button>
-        <button onclick="nextQuestion(3)">San Fierro</button>
-      </div>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/QdBZY2fkU-0?rel=0" allowfullscreen></iframe>
+  </div>
+
+  <section class="noticias">
+    <div class="noticia">
+      <h2>Rockstar Games revela data de lançamento e detalhes surpreendentes de GTA 6</h2>
+      <p>Após anos de especulações, a Rockstar Games confirmou que Grand Theft Auto VI será lançado oficialmente em 2025. O anúncio foi acompanhado por um trailer cinematográfico que quebrou recordes de visualização e colocou os fãs em êxtase. O jogo será ambientado em uma versão moderna de Vice City, fortemente inspirada na vibrante cidade de Miami. A narrativa será centrada em dois protagonistas, Lucia e Jason, cuja dinâmica remete ao estilo "Bonnie e Clyde". A Rockstar destacou que a história será mais pessoal e emocional do que qualquer outra na franquia. A cidade contará com novos sistemas de física, clima dinâmico e comportamentos de NPCs baseados em IA que prometem elevar o nível de imersão.</p>
+      <div class="fonte">Fonte: Rockstar Games</div>
     </div>
-  </div>
 
-  <div class="ranking-container" id="ranking-container">
-    <h2>Ranking</h2>
-    <ul id="ranking-list"></ul>
-  </div>
+    <div class="noticia">
+      <h2>Trailer de GTA 6 atinge marco histórico e gera reações intensas</h2>
+      <p>O trailer de revelação de GTA 6 atingiu a marca impressionante de 100 milhões de visualizações em menos de uma semana no YouTube. Essa conquista solidifica o jogo como o título mais aguardado da década. As reações da comunidade gamer foram majoritariamente positivas, destacando os gráficos revolucionários, os ambientes vivos e detalhados e a diversidade cultural retratada. Muitos fãs notaram a presença de cenários nunca antes vistos na série, como zonas pantanosas, praias movimentadas, arranha-céus futuristas e até perseguições com animais selvagens. A qualidade visual indica uma evolução do motor gráfico RAGE da Rockstar, que agora permite reflexos em tempo real, animações faciais avançadas e efeitos climáticos cinematográficos.</p>
+      <div class="fonte">Fonte: YouTube - Rockstar Games</div>
+    </div>
 
-  <script>
-    const questions = [
-      {
-        question: "Qual é a cidade principal de GTA 5?",
-        options: ["Los Santos", "Vice City", "Liberty City", "San Fierro"],
-        correctAnswer: 0
-      },
-      {
-        question: "Quem é o protagonista principal de GTA 5?",
-        options: ["Trevor", "Michael", "Franklin", "Niko Bellic"],
-        correctAnswer: 1
-      },
-      {
-        question: "Em que ano GTA 5 foi lançado?",
-        options: ["2013", "2014", "2012", "2015"],
-        correctAnswer: 0
-      },
-      {
-        question: "Qual é a principal atividade no jogo GTA 5?",
-        options: ["Roubo a banco", "Corridas ilegais", "Missões de espionagem", "Tráfico de drogas"],
-        correctAnswer: 0
-      },
-      {
-        question: "Quantos protagonistas há em GTA 5?",
-        options: ["1", "2", "3", "4"],
-        correctAnswer: 2
-      }
-    ];
+    <div class="noticia">
+      <h2>Análise aprofundada do trailer de GTA 6</h2>
+      <p>O primeiro vislumbre de GTA 6 através de seu trailer oficial revela muito mais do que uma cidade vibrante: ele indica uma nova filosofia de design por parte da Rockstar. A ambientação em Vice City modernizada é repleta de contrastes, onde o luxo dos cassinos e festas se mistura à realidade de zonas carentes e ruas movimentadas por influenciadores digitais e gangues locais. A personagem Lucia é vista em diversas situações, desde confrontos armados até cenas emocionais, o que sugere um arco de desenvolvimento rico. O trailer também faz referências a temas atuais como redes sociais, fake news e a economia informal. Essa abordagem contemporânea poderá colocar GTA 6 como um marco narrativo e tecnológico na indústria dos jogos.</p>
+      <div class="fonte">Fonte: IGN</div>
+    </div>
+  </section>
 
-    let currentQuestion = 0;
-    let score = 0;
-    const playerName = prompt("Qual seu nome?");
-    const playerEmail = prompt("Qual seu e-mail?");
-
-    function nextQuestion(selectedOption) {
-      if (selectedOption === questions[currentQuestion].correctAnswer) {
-        score++;
-      }
-
-      currentQuestion++;
-      if (currentQuestion < questions.length) {
-        document.getElementById("question-text").textContent = questions[currentQuestion].question;
-        const optionsContainer = document.getElementById("options-container");
-        optionsContainer.innerHTML = '';
-        questions[currentQuestion].options.forEach((option, index) => {
-          const button = document.createElement('button');
-          button.textContent = option;
-          button.onclick = () => nextQuestion(index);
-          optionsContainer.appendChild(button);
-        });
-      } else {
-        submitScore();
-      }
-    }
-
-    function submitScore() {
-      const data = {
-        name: playerName,
-        email: playerEmail,
-        score: score
-      };
-
-      fetch('https://sheetdb.io/api/v1/l8nlkcjojys01', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify([data])
-      }).then(response => response.json())
-        .then(() => {
-          document.querySelector('.quiz-container').style.display = 'none';
-          document.getElementById('ranking-container').style.display = 'flex';
-          displayRanking();
-        });
-    }
-
-    function displayRanking() {
-      fetch('https://sheetdb.io/api/v1/l8nlkcjojys01')
-        .then(response => response.json())
-        .then(data => {
-          const ranking = data.sort((a, b) => b.score - a.score).slice(0, 5);
-          const rankingList = document.getElementById('ranking-list');
-          rankingList.innerHTML = ''; // Limpar lista existente
-          ranking.forEach(player => {
-            const listItem = document.createElement('li');
-            listItem.textContent = `${player.name} - Pontuação: ${player.score}`;
-            rankingList.appendChild(listItem);
-          });
-        });
-    }
-  </script>
+  <footer>
+    Página criada por Bauer - GTA 6 Fan Page
+  </footer>
 </body>
 </html>
