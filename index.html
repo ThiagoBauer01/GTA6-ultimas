@@ -4,19 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GTA 6 - Últimas Notícias</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
       color: #ffffff;
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
-      overflow-x: hidden;
     }
 
     header {
@@ -25,9 +24,9 @@
     }
 
     header h1 {
-      font-size: 2.8rem;
+      font-size: 2.5rem;
       color: #ff00cc;
-      text-shadow: 0 0 10px #ff00cc, 0 0 20px #ff00cc;
+      text-shadow: 0 0 10px #ff00cc;
       margin: 0;
     }
 
@@ -60,16 +59,10 @@
       padding: 1.5rem;
       border-radius: 1rem;
       box-shadow: 0 0 15px rgba(255, 0, 204, 0.2);
-      transition: background 0.3s;
-    }
-
-    .noticia:hover {
-      background: rgba(255, 255, 255, 0.1);
     }
 
     .noticia h2 {
       color: #00ffff;
-      text-shadow: 0 0 8px #00ffff;
       font-size: 1.4rem;
       margin-bottom: 0.5rem;
     }
@@ -77,7 +70,18 @@
     .noticia p {
       color: #ddd;
       font-size: 1rem;
-      line-height: 1.5;
+      line-height: 1.6;
+    }
+
+    .fonte {
+      margin-top: 0.8rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    .fonte a {
+      color: #aaa;
+      text-decoration: underline;
     }
 
     footer {
@@ -112,17 +116,29 @@
   <section class="noticias">
     <div class="noticia">
       <h2>Lançamento em 2025</h2>
-      <p>A Rockstar confirmou oficialmente que GTA 6 será lançado no final de 2025, entre setembro e novembro.</p>
+      <p>A Rockstar confirmou oficialmente que GTA 6 será lançado no final de 2025, com previsão entre setembro e novembro.</p>
+      <div class="fonte">
+        Fonte: <a href="https://www.rockstargames.com/newswire/article/6ko44760" target="_blank">rockstargames.com</a><br>
+        Publicado em 04/12/2023 às 11:00
+      </div>
     </div>
 
     <div class="noticia">
       <h2>Vice City está de volta</h2>
-      <p>A clássica cidade retorna com visual repaginado, inspirada no sul da Flórida com gráficos impressionantes.</p>
+      <p>A cidade clássica retorna com um visual moderno e realista, inspirada no sul da Flórida, trazendo vida à nova geração de consoles.</p>
+      <div class="fonte">
+        Fonte: <a href="https://www.ign.com/articles/gta-6-trailer-vice-city" target="_blank">ign.com</a><br>
+        Publicado em 05/12/2023 às 09:45
+      </div>
     </div>
 
     <div class="noticia">
-      <h2>Protagonistas: Lucia e parceiro</h2>
-      <p>O enredo gira em torno de uma dupla criminosa, seguindo uma vibe “Bonnie e Clyde” moderna e intensa.</p>
+      <h2>Lucia e Jason: protagonistas</h2>
+      <p>O trailer confirmou que Lucia será uma das protagonistas, em uma história de parceria e crimes ao estilo Bonnie e Clyde.</p>
+      <div class="fonte">
+        Fonte: <a href="https://www.gameinformer.com/news/2023/12/05/gta-6s-main-characters-are-lucia-and-her-partner" target="_blank">gameinformer.com</a><br>
+        Publicado em 05/12/2023 às 10:20
+      </div>
     </div>
   </section>
 
